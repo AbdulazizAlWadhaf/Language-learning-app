@@ -5,17 +5,67 @@ import '../models/number.dart';
 
 class NumbersPage extends StatelessWidget {
   const NumbersPage({super.key});
-  final List<Number> numbers = const [
-    Number(image: 'assets/images/numbers/number_one.png', jpName: 'ichi', enName: 'one'),
-    Number(image: 'assets/images/numbers/number_two.png', jpName: 'Ni', enName: 'two'),
-    Number(image: 'assets/images/numbers/number_three.png', jpName: 'san', enName: 'three'),
-    Number(image: 'assets/images/numbers/number_four.png', jpName: 'Shi', enName: 'four'),
-    Number(image: 'assets/images/numbers/number_five.png', jpName: 'Go', enName: 'five'),
-    Number(image: 'assets/images/numbers/number_six.png', jpName: 'Roku', enName: 'six'),
-    Number(image: 'assets/images/numbers/number_seven.png', jpName: 'Sebun', enName: 'seven'),
-    Number(image: 'assets/images/numbers/number_eight.png', jpName: 'Hachi', enName: 'eight'),
-    Number(image: 'assets/images/numbers/number_nine.png', jpName: 'Kyu', enName: 'nine'),
-    Number(image: 'assets/images/numbers/number_ten.png', jpName: 'Ju', enName: 'ten'),
+  final List<itemModel> numbers = const [
+    itemModel(
+      image: 'assets/images/numbers/number_one.png',
+      jpName: 'ichi',
+      enName: 'one',
+      sound: 'sounds/numbers/number_one_sound.mp3'
+    ),
+    itemModel(
+      image: 'assets/images/numbers/number_two.png',
+      jpName: 'Ni',
+      enName: 'two',
+      sound: 'sounds/numbers/number_two_sound.mp3'
+    ),
+    itemModel(
+      image: 'assets/images/numbers/number_three.png',
+      jpName: 'san',
+      enName: 'three',
+      sound: 'sounds/numbers/number_three_sound.mp3'
+    ),
+    itemModel(
+      image: 'assets/images/numbers/number_four.png',
+      jpName: 'Shi',
+      enName: 'four',
+      sound: 'sounds/numbers/number_four_sound.mp3'
+    ),
+    itemModel(
+      image: 'assets/images/numbers/number_five.png',
+      jpName: 'Go',
+      enName: 'five',
+      sound: 'sounds/numbers/number_five_sound.mp3'
+    ),
+    itemModel(
+      image: 'assets/images/numbers/number_six.png',
+      jpName: 'Roku',
+      enName: 'six',
+      sound: 'sounds/numbers/number_six_sound.mp3'
+    ),
+    itemModel(
+      image: 'assets/images/numbers/number_seven.png',
+      jpName: 'Sebun',
+      enName: 'seven',
+      sound: 'sounds/numbers/number_seven_sound.mp3'
+    ),
+    itemModel(
+      image: 'assets/images/numbers/number_eight.png',
+      jpName: 'Hachi',
+      enName: 'eight',
+      sound: 'sounds/numbers/number_eight_sound.mp3'
+    ),
+    itemModel(
+      image: 'assets/images/numbers/number_nine.png',
+      jpName: 'Kyu',
+      enName: 'nine',
+      sound: 'sounds/numbers/number_nine_sound.mp3'
+    ),
+    itemModel(
+      image: 'assets/images/numbers/number_ten.png',
+      jpName: 'Ju',
+      enName: 'ten',
+      sound: 'sounds/numbers/number_ten_sound.mp3'
+    ),
   ];
   @override
   Widget build(BuildContext context) {
@@ -30,21 +80,14 @@ class NumbersPage extends StatelessWidget {
           ),
         ),
       ),
-      body: ListView(
-        children: [
-          Item(number: numbers[0]),
-          Item(number: numbers[1]),
-          Item(number: numbers[2]),
-          Item(number: numbers[3]),
-          Item(number: numbers[4]),
-          Item(number: numbers[5]),
-          Item(number: numbers[6]),
-          Item(number: numbers[7]),
-          Item(number: numbers[8]),
-          Item(number: numbers[9]),
-        ],
-      ),
+      body: ListView.builder(
+        itemCount: numbers.length,
+        itemBuilder: (context, index){
+          return Item(number: numbers[index], color: Colors.orange,);
+      })
     );
   }
+
+
 }
 
