@@ -48,12 +48,7 @@ class Item extends StatelessWidget {
                     );
                   }
                 }
-                // For short, one-shot sounds, you might not need to explicitly call player.dispose() here,
-                // as the player instance is local to this async block and will be garbage collected.
-                // The audioplayers plugin should manage releasing native resources when playback completes
-                // or the player instance is no longer referenced.
-                // If you were reusing 'player' or keeping it as a member variable,
-                // you'd manage its lifecycle more carefully (e.g., dispose in a StatefulWidget).
+                
               },
               icon: const Icon( // Added const
                 Icons.play_arrow,
